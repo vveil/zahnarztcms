@@ -2,6 +2,7 @@ import { CollectionConfig } from "payload/types";
 
 export const Articles: CollectionConfig = {
   slug: "articles",
+  auth: false,
   upload: {
     staticURL: "/articles",
     staticDir: "articles",
