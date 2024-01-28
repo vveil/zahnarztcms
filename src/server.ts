@@ -1,8 +1,16 @@
 import express from "express";
 import payload from "payload";
+import cors from "cors";
 
 require("dotenv").config();
 const app = express();
+
+const corsOptions = {
+  origin: "https://zahnarzt.niklas.ai",
+  // optionsSuccessStatus: 200 // For legacy browser support
+};
+
+app.use(cors(corsOptions));
 
 // Redirect root to Admin panel
 app.get("/", (_, res) => {
