@@ -31,3 +31,8 @@ volumes:
   data:
   node_modules:
   pgdata:
+
+networks:
+  default:
+    external:
+      name: webnet
