@@ -12,6 +12,14 @@ export const Articles: CollectionConfig = {
   },
   fields: [
     {
+      name: "alt image text",
+      type: "text",
+    },
+    {
+      name: "imageCaption",
+      type: "text",
+    },
+    {
       name: "releaseDate",
       type: "date",
       admin: {
@@ -28,14 +36,6 @@ export const Articles: CollectionConfig = {
     {
       name: "content",
       type: "textarea",
-    },
-    {
-      name: "alt image text",
-      type: "text",
-    },
-    {
-      name: "imageCaption",
-      type: "text",
     },
   ],
 };
