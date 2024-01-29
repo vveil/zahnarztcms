@@ -12,7 +12,7 @@ export const Articles: CollectionConfig = {
   },
   fields: [
     {
-      name: "alt image text",
+      name: "altImageText",
       type: "text",
     },
     {
