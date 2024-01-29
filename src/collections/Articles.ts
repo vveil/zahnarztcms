@@ -8,21 +8,18 @@ export const Articles: CollectionConfig = {
   upload: {
     staticURL: "/articles",
     staticDir: "articles",
-    imageSizes: [
-      {
-        name: "thumbnail",
-        width: 400,
-        height: undefined,
-        position: "centre",
-      },
-    ],
-    adminThumbnail: "thumbnail",
     mimeTypes: ["image/*"],
   },
   fields: [
     {
-      name: "alt",
-      type: "text",
+      name: "releaseDate",
+      type: "date",
+      admin: {
+        date: {
+          pickerAppearance: "dayOnly",
+          displayFormat: "d MMM yyy",
+        },
+      },
     },
     {
       name: "title",
@@ -30,7 +27,15 @@ export const Articles: CollectionConfig = {
     },
     {
       name: "content",
-      type: "richText",
+      type: "textarea",
+    },
+    {
+      name: "alt image text",
+      type: "text",
+    },
+    {
+      name: "imageCaption",
+      type: "text",
     },
   ],
 };
