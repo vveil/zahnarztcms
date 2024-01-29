@@ -30,7 +30,7 @@ export const Articles: CollectionConfig = {
     },
     {
       name: "content",
-      type: "richText",
+      type: "text",
     },
   ],
 };
