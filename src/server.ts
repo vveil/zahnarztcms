@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 
 const corsOptions = {
-  origin: ["https://zahnarzt.niklas.ai", "http://localhost:3000"],
+  origin: ["https://zahnarzt.niklas.ai", "http://localhost:3000", "https://dr-werner-zahnarzt.de"],
   // optionsSuccessStatus: 200 // For legacy browser support
 };
 
