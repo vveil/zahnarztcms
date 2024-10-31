@@ -10,6 +10,12 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.zahnarztcms.rule=Host(`zahncms.niklas.ai`)"
+      - "traefik.http.services.zahnarztcms.loadbalancer.server.port=3010"
+      - "traefik.http.routers.zahnarztcms.entrypoints=websecure"
+      - "traefik.http.routers.zahnarztcms.tls.certresolver=myresolver"
     env_file:
       - .env
     environment:
@@ -20,6 +26,8 @@ services:
       timeout: 10s
       retries: 3
     restart: unless-stopped
+    networks:
+      - webnet
 
   postgres:
     image: postgres:15-alpine
@@ -44,6 +52,8 @@ services:
           memory: 1G
         reservations:
           memory: 512M
+    networks:
+      - webnet
 
 volumes:
   node_modules:
@@ -51,6 +61,5 @@ volumes:
     driver: local
 
 networks:
-  default:
-    external:
-      name: webnet
+  webnet:
+    external: true
